@@ -1,19 +1,19 @@
 import React, { Suspense } from 'react';
-import { Fallback } from '@/componentes/shared/fallback';
+import { Fallback } from '@/components/shared/fallback';
 import { ErrorBoundary } from 'react-error-boundary';
-import { FallbackError } from '@/componentes/shared/fallback-error';
+import { FallbackError } from '@/components/shared/fallback-error';
 import { BrowserRouter } from 'react-router-dom';
-import { MicrofrontendTheme } from '@mfe-lib/styleguide';
-import { ThemeProvider } from '@mui/material';
+import { darkTheme, lightTheme } from '@mfe-lib/styleguide';
+import { FluentProvider } from '@fluentui/react-components';
 
 export const AppProvider = ({ children }: React.PropsWithChildren) => {
   return (
-    <ThemeProvider theme={MicrofrontendTheme}>
+    <FluentProvider theme={lightTheme}>
       <Suspense fallback={<Fallback />}>
         <ErrorBoundary FallbackComponent={FallbackError}>
           <BrowserRouter>{children}</BrowserRouter>
         </ErrorBoundary>
       </Suspense>
-    </ThemeProvider>
+    </FluentProvider>
   );
 };

@@ -14,7 +14,7 @@ export default defineConfig(({ mode }) => {
     },
 
     preview: {
-      port: 4301,
+      port: 4302,
       host: 'localhost',
     },
 
@@ -68,10 +68,9 @@ export default defineConfig(({ mode }) => {
         external: [
           'react',
           'react-dom',
-          '@mui/material',
           '@emotion/react',
           '@emotion/styled',
-          '@mfe-lib/styleguide',
+          // '@mfe-lib/styleguide',
         ],
       },
     },

@@ -1,40 +1,28 @@
-type TMenuChildren = {
+export type TRoutes = {
   submenuName: string;
   path: string;
 };
 
-type TRoutes = {
-  menuName: string;
-  menuChildren: TMenuChildren[];
-};
-
-export type AppRoutes = {
+export type TAppRoutes = {
   appName: string;
-  appIcon?: string;
+  path: string;
+  appIcon: string;
   routes: TRoutes[];
 };
 
-export const DashboardNavRoutes: AppRoutes = {
+export const MfeNavRoutes: TAppRoutes = {
   appName: 'Dashboard',
-  appIcon: '/streaming/streaming-nav-icon.svg',
+  appIcon: 'Dashboard',
+  path: 'dashboard',
   routes: [
     {
-      menuName: 'Stock',
-      menuChildren: [
-        {
-          submenuName: 'Stock',
-          path: 'stock/stock/stock',
-        },
-      ],
+      submenuName: 'Stock',
+      path: 'dashboard/stock',
     },
+
     {
-      menuName: 'Sales',
-      menuChildren: [
-        {
-          submenuName: 'Sales',
-          path: 'Sales/Sales/Sales',
-        },
-      ],
+      submenuName: 'Sales',
+      path: 'dashboard/sales',
     },
   ],
 };

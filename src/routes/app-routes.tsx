@@ -1,8 +1,8 @@
 import { lazyImport } from '@/utils/lazy-import';
 import { Suspense } from 'react';
 import { Outlet, RouteObject } from 'react-router-dom';
-import { Fallback } from '@/componentes/shared/fallback';
-import AppLayout from './../componentes/layout';
+import { Fallback } from '@/components/shared/fallback';
+import { AppLayout } from '../components/layout';
 
 const { StockRoutes } = lazyImport(
   () => import('@/features/stock'),

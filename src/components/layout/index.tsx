@@ -1,12 +1,12 @@
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import { memo, PropsWithChildren } from 'react';
-import { Helmet } from 'react-helmet-async';
+import React from 'react';
+import { PropsWithChildren } from 'react';
+// import { Helmet } from 'react-helmet-async';
 
-const AppLayout: React.FC<PropsWithChildren> = ({ children }) => {
-  return (
-    <>
-      {/* <Helmet title="Dashboard">
+export const AppLayout: React.FC<PropsWithChildren> = React.memo(
+  ({ children }) => {
+    return (
+      <>
+        {/* <Helmet title="Dashboard">
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -27,13 +27,9 @@ const AppLayout: React.FC<PropsWithChildren> = ({ children }) => {
         <link rel="manifest" href="dashboard/site.webmanifest" />
         <link rel="stylesheet" href="src/global.css" />
       </Helmet> */}
-      <Container maxWidth="xl">
-        <Box component="main" sx={{ flexGrow: 1, p: 1 }}>
-          {children}
-        </Box>
-      </Container>
-    </>
-  );
-};
 
-export default memo(AppLayout);
+        <main>{children}</main>
+      </>
+    );
+  }
+);
